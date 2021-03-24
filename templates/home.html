@@ -1,60 +1,26 @@
 <!DOCTYPE html>
-
+{% load static %}
 <html>
-<head runat="server">
-    <title>Home</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .topnav {
-            overflow: hidden;
-            background-color: #333;
-        }
-
-            .topnav a {
-                float: left;
-                color: #f2f2f2;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-                font-size: 17px;
-            }
-
-                .topnav a:hover {
-                    background-color: lightblue;
-                    color: lightyellow;
-                }
-
-                .topnav a.active {
-                    background-color: #4CAF50;
-                    color: white;
-                }
-
-        div {
-            background-color: lightblue;
-            padding: 8px;
-            width: auto;
-            margin: 0;
-        }
-    </style>
-</head>
-
 <body>
-    <div class="topnav">
-        <a class="home" href="http://127.0.0.1:8000/home">Home</a>
-        <a href="http://127.0.0.1:8000/login">Login</a>
-        <a href="http://127.0.0.1:8000/register">Register</a>
-        <a href="http://127.0.0.1:8000/about">About</a>
-        <a href="http://127.0.0.1:8000/contact">Contact</a>
-        <a href="http://127.0.0.1:8000/index">Index</a>
-        <a href="http://127.0.0.1:8000/test">Test</a>
-        <a href="http://127.0.0.1:8000/preview">Preview</a>
-    </div>
-
+    <head>
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    </head>
+    <h1>this is home page{{context}} </h1>
+    <center> <img src="{% static 'image.png' %}"</center>
+    <section class="header_section">
+        <div class="container">
+            <div class="header_box">
+                <div class="header_btn">
+                    <ul>
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'about' %}">About</a></li>
+                        <li><a href="{% url 'login' %}">Login</a></li>
+                        <li><a href="{% url 'register' %}">Register</a></li>
+                        <li><a href="{% url 'test' %}">Product</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
-
 </html>
